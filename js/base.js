@@ -287,6 +287,33 @@ function addOpensearch(){
 
 $(window).load(function(){
 
+      $(".dropdown2 img.flag").addClass("flagvisibility");
+
+            $(".dropdown2 dt a").click(function() {
+                $(".dropdown2 dd ul").toggle();
+            });
+                        
+            $(".dropdown2 dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown2 dt a span").html(text);
+                $(".dropdown2 dd ul").hide();
+            });
+                        
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown2"))
+                    $(".dropdown2 dd ul").hide();
+            });
+
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown2 img.flag").toggleClass("flagvisibility");
+            });
+
       $(".dropdown img.flag").addClass("flagvisibility");
 
             $(".dropdown dt a").click(function() {

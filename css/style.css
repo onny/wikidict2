@@ -1,7 +1,9 @@
+* { box-sizing: border-box; }
+*
 body{
   width: 100%;
   margin:0px 0px; padding:0px;
-  background-color: #f4f8fb;
+  background: #f4f8fb;
   font: normal 12px/150% Verdana, Arial, Helvetica, sans-serif; 
   color: #222;
   text-align: center;
@@ -29,13 +31,7 @@ header ul{
   float: right;
   list-style-type: none;  
 }
-input {
-  resize: horizontal;
-  width: 98%;
-  padding: 8px;
-  border: solid 1px #E5E5E5;
-  font: normal 12px Verdana, Tahoma, sans-serif;
-}
+
 header li{
   margin-left: 20px;
   display: inline;
@@ -68,14 +64,14 @@ header a:hover{
 #note{
   display: block;
   color: #851515;
-  background-color: #FFC7C7;
+  background: #FFC7C7;
   border-color: #851515;
   border-width: 1px;
   border-style: solid;
   padding: 5px;
   padding-left: 10px;
   margin-bottom: 10px;
-  width: 97%;
+  width: 100%;
 }
 #note img{
   float: right;
@@ -91,15 +87,16 @@ header a:hover{
   color:#FFFFFF; 
   font-size: 15px; font-weight: bold; 
   border-left: 1px solid #0070A8; 
+  width: 50%;
 }
 .datagrid table thead th:first-child { border: none; }
-.datagrid table tbody td { color: #00496B; border-left: 1px solid #E1EEF4;font-size: 16px;font-weight: normal; }
+.datagrid table tbody td { color: #00496B; border-left: 1px solid #E1EEF4;font-size: 16px;font-weight: normal; padding-top: 5px;}
 .datagrid table tbody .alt td { background: #f4f8fb; color: #00496B; }
 .datagrid table tbody td:first-child { border-left: none; }
 .datagrid table tbody tr:last-child td { border-bottom: none; }
 .datagrid table tfoot td div { border-top: 1px solid #006699;background: #E1EEF4;}
 .datagrid table tfoot td { padding: 0; font-size: 12px }
-.datagrid table tfoot td div{ padding: 2px; }
+.datagrid table tfoot td div{ padding: 6px; }
 .datagrid table tfoot td ul { margin: 0; padding:0; list-style: none; text-align: right; }
 .datagrid table tfoot  li { display: inline; }
 .datagrid table tfoot li a { text-decoration: none; display: inline-block;  padding: 2px 8px; margin: 1px;color: #FFFFFF;border: 1px solid #006699;-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #3778A6) );background:-moz-linear-gradient( center top, #006699 5%, #3778A6 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#3778A6');background-color:#006699; }
@@ -108,9 +105,9 @@ header a:hover{
   margin-top: 10px;
 }
 
-.datagrid table a{
+.datagrid table tbody a{
   text-decoration: none;
-  color: #222;
+  color: #00496B;
 }
 
 select {
@@ -122,9 +119,29 @@ select {
   -webkit-appearance: none;
   width: 100%;
 }
-select option[value="de"] {
+/* select option[value="de"] {
   background-image:url('http://upload.wikimedia.org/wikipedia/commons/b/b5/Icons-flag-de.png');
   color: black;
+} */
+
+#search {
+  background: #3778A6 url('../img/magnify.png') no-repeat;
+  background-size: 20px;
+  background-position: right 11px center;
+  padding-right: 40px;
+  padding-left: 7px;
+  border-radius: 5px;
+  height: 45px;
+  padding-top: 5px;
+}
+
+input {
+  border-radius: 2px;
+  width: 100%;
+  padding: 8px;
+  //border: solid 1px #E5E5E5;
+  border-width: 0px;
+  font: normal 12px Verdana, Tahoma, sans-serif;
 }
 
 
@@ -149,14 +166,13 @@ select option[value="de"] {
 @-o-keyframes fadeIn { from { opacity:0; } to { opacity:1; } } 
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }  
 
-        .dropdown { margin: 0 -5px; padding-left: 5px;}
+        .dropdown { margin: 5px -5px; padding-left: 5px;}
         .dropdown dd, .dropdown dt, .dropdown ul { margin:0px; padding:0px; }
         .dropdown dd { position:relative; }                                                                                                                                                                      
         .dropdown a, .dropdown a:visited { color:white; text-decoration:none; outline:none;}
         //.dropdown a:hover { color:white;}
         //.dropdown dt a:hover { color:white; border: 1px solid #d0c9af;}
-        .dropdown dt a {font-size: 15px; font-weight: bold; background:#3778a6 url(../img/arrow.png) no-repeat scroll right center; display:block; padding-right:30px;
-                        width:90%;}
+        .dropdown dt a {font-size: 15px; font-weight: bold; background:#3778a6 url(../img/arrow.png) no-repeat scroll right center; display:block; width:100%;}
         .dropdown dt a span {cursor:pointer; display:block;}
         .dropdown dd ul { background:#3778a6 none repeat scroll 0 0; border:1px solid #d4ca9a; color:#C5C0B0; display:none;
                           left:0px; padding:5px 0px; position:absolute; top:2px; width:auto; min-width:100%; list-style:none;}
@@ -165,4 +181,20 @@ select option[value="de"] {
         .dropdown dd ul li a:hover { background-color:#183149;}
             
         .dropdown img.flag { border:none; vertical-align:middle; margin-right:10px; }
+
+        .dropdown2 { margin: 5px -5px; padding-left: 5px;}
+        .dropdown2 dd, .dropdown dt, .dropdown ul { margin:0px; padding:0px; }
+        .dropdown2 dd { position:relative; }                                                                                                                                                                      
+        .dropdown2 a, .dropdown a:visited { color:white; text-decoration:none; outline:none;}
+        //.dropdown2 a:hover { color:white;}
+        //.dropdown2 dt a:hover { color:white; border: 1px solid #d0c9af;}
+        .dropdown2 dt a {font-size: 15px; font-weight: bold; background:#3778a6 url(../img/arrow.png) no-repeat scroll right center; display:block; width:100%;}
+        .dropdown2 dt a span {cursor:pointer; display:block;}
+        .dropdown2 dd ul { background:#3778a6 none repeat scroll 0 0; border:1px solid #d4ca9a; color:#C5C0B0; display:none;
+                          left:0px; padding:5px 0px; position:absolute; top:2px; width:auto; min-width:100%; list-style:none;}
+        .dropdown2 span.value { display:none;}
+        .dropdown2 dd ul li a { padding:5px; display:block;}
+        .dropdown2 dd ul li a:hover { background-color:#183149;}
+            
+        .dropdown2 img.flag { border:none; vertical-align:middle; margin-right:10px; }
 
