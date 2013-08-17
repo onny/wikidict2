@@ -91,9 +91,9 @@ header a:hover{
 }
 .datagrid table thead th:first-child { border: none; }
 .datagrid table tbody td { color: #00496B; border-left: 1px solid #E1EEF4;font-size: 16px;font-weight: normal; padding-top: 5px;}
-.datagrid table tbody .alt td { background: #f4f8fb; color: #00496B; }
 .datagrid table tbody td:first-child { border-left: none; }
 .datagrid table tbody tr:last-child td { border-bottom: none; }
+.datagrid table tbody tr:nth-child(2n){ background-color: #f4f8fb; }
 .datagrid table tfoot td div { border-top: 1px solid #006699;background: #E1EEF4;}
 .datagrid table tfoot td { padding: 0; font-size: 12px }
 .datagrid table tfoot td div{ padding: 6px; }

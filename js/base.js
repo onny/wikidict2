@@ -224,7 +224,6 @@ function show_result(data) {
 	      var trans = el['*'];
 	      trans = trans.replace($('#to').val()+":", '').replace('_', ' ').replace('Special:Search/','');
 	      $('#result tbody').append('<tr><td><a target=new href="http://'+$('#from').val()+'.wiktionary.org/wiki/'+ $('#word').val().replace(' ','_') +'">' + $('#word').val() +'</a></td><td><a target=new href="http://'+$('#to').val()+'.wiktionary.org/wiki/'+ trans.replace(' ','_') +'">' + trans + '</a> <font color=blue>[-]</font></td></tr>');
-	      $('#result tbody').append('<tr class="alt"><td><a target=new href="http://'+$('#from').val()+'.wiktionary.org/wiki/'+ $('#word').val().replace(' ','_') +'">' + $('#word').val() +'</a></td><td><a target=new href="http://'+$('#to').val()+'.wiktionary.org/wiki/'+ trans.replace(' ','_') +'">' + trans + '</a> <font color=blue>[-]</font></td></tr>');
 	    }
 	}); 
 	if ($('#result tbody tr').length == 0) { // function each quits without returning true: page exists, but not including our requested language
@@ -353,7 +352,6 @@ $(window).load(function(){
 		$( "#word" ).autocomplete( "close" ); //auto-completion fenster schließen
 		return false;
 	});
-  	$('#word').focus();
 	$("#word").autocomplete({
 	    source: function(request, response) {
 		$.ajax({
