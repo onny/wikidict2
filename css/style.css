@@ -15,6 +15,9 @@ body{
   text-align:left;
   padding: 0px 10px;
 } 
+#placeholder {
+  height: 250px;
+}
 header{
   background-color: #183149;
   border-color: #3778a6;
@@ -101,6 +104,7 @@ header a:hover{
 .datagrid table tfoot  li { display: inline; }
 .datagrid table tfoot li a { text-decoration: none; display: inline-block;  padding: 2px 8px; margin: 1px;color: #FFFFFF;border: 1px solid #006699;-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #3778A6) );background:-moz-linear-gradient( center top, #006699 5%, #3778A6 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#3778A6');background-color:#006699; }
 .datagrid table tfoot ul.active, .datagrid table tfoot ul a:hover { text-decoration: none;border-color: #006699; color: #FFFFFF; background: none; background-color:#00557F;}
+.datagrid table tbody td p{ padding: 5px; text-align: center; }
 .datagrid{
   margin-top: 10px;
 }
@@ -111,7 +115,6 @@ header a:hover{
 }
 
 select {
-  background: #3778A6 url('../img/arrow.png');
   border-style: none;
   text-align: center;
   color: white;
