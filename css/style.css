@@ -1,5 +1,5 @@
 * { box-sizing: border-box; }
-*
+
 body{
   width: 100%;
   margin:0px 0px; padding:0px;
@@ -83,7 +83,7 @@ header a:hover{
 }
 
 .datagrid table { border-collapse: collapse; width: 100%; } 
-.datagrid {font: normal 12px/150% Verdana, Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 1px solid #006699; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+.datagrid {font: normal 12px/150% Verdana, Arial, Helvetica, sans-serif; background: #fff; border: 1px solid #006699; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
 .datagrid table td, .datagrid table th { padding: 3px 10px; }
 .datagrid table thead th {
   background: #3778A6;
