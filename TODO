@@ -1,0 +1,7 @@
+- if same lang on the one side is selected, then switch both
+- about page similar to https://heml.is/
+- jquery image dropdown plugin popup verschwindet bzw. wird überdeckt
+- select tabindex (bestimmte default position) funktioniert nicht :(
+- ladeanimation (während ajax request)
+- dropdowns resizen noch nicht so recht
+- dropdown on select nur, wenn text in inputbox

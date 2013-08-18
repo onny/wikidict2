@@ -40,15 +40,16 @@ img.fnone{float:none !important}
 .dd .ddArrow{width:16px;height:16px; margin-top:-8px; background:url(../../img/arrow.png) no-repeat;}
 .dd .ddArrow:hover{background-position:0 100%;}
 .dd .ddTitle .ddTitleText .ddTitleText{padding:0;}
-.dd .ddTitle .description{font-size:12px; color:#666}
+.dd .ddTitle .description{font-size:12px; color:##0F496B}
 .dd .ddTitle .ddTitleText img{padding:0 6px 3px 0;}
 .dd .ddChild{border:1px solid #c3c3c3; background-color:#fff; left:-1px;}
 .dd .ddChild li{padding:5px; background-color:#fff; border-bottom:1px solid #c3c3c3;}
-.dd .ddChild li .description{color:#666;}
-.dd .ddChild li .ddlabel{color:#333;}
-.dd .ddChild li.hover{background-color:#f2f2f2}
+.dd .ddChild li .description{color: #0F496B; }
+.dd .ddChild li .ddlabel{ color:#00496B; }
+.dd .ddChild li .ddlabel:hover{ color: #00496B; }
+.dd .ddChild li.hover{background-color: #E1EEF4; color: #00496B;}
 .dd .ddChild li img{padding:0 6px 3px 0;}
 .dd .ddChild li.optgroup{padding:0;}
 .dd .ddChild li.optgroup .optgroupTitle{padding:0 5px; font-weight:bold; font-style:italic}
 .dd .ddChild li.optgroup ul li{padding:5px 5px 5px 15px}
-.dd .ddChild li.selected{background-color:#d5d5d5; color:#000;}
+.dd .ddChild li.selected{background-color: #3778A6; color: #0F496B; }
