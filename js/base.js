@@ -263,8 +263,7 @@ function article(page) {
 
 function showArticle(page) {
 	$('#result').hide();
-	$('section > article').show();
-	$('section > article').load(page);
+	$('#container').load(page);
 }
 
 function setArticleHistory(page) {

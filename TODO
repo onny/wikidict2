@@ -1,7 +1,20 @@
 - if same lang on the one side is selected, then switch both
 - about page similar to https://heml.is/
 - jquery image dropdown plugin popup verschwindet bzw. wird überdeckt
-- select tabindex (bestimmte default position) funktioniert nicht :(
 - ladeanimation (während ajax request)
-- dropdowns resizen noch nicht so recht
 - dropdown on select nur, wenn text in inputbox
+- iso639 flag sprite
+- remember last selected select option
+- wikidict logo position fixed
+- funktionalität der seite ohne js
+- groß- / kleinschreibung
+#	- Firefox/Chrome Such-Plugin
+#	- In der Ergebnistabelle, Vokabeln ergänzen mit Angaben (f/m, plural/singular)
+#	- Tippfehler erkennen und Korrektur vorschlagen
+#	- Dict.cc fallback
+#	- Vokabeln speichern / Liste anlegen
+#	- Eintrag nicht gefunden -> Link zum Anlegen der Seite
+#	- About-Seite: Warum wurde das Projekt gestartet 
+#	- Pronunciations http://en.wiktionary.org/wiki/sunshine
+#	- fixed table size
+do autocomplete in table (lighter text color to indicate unfinished result)
