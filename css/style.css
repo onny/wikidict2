@@ -30,7 +30,7 @@ header ul{
   float: right;
   list-style-type: none;  
   vertical-align: middle;
-  line-height: 38px;
+  line-height: 30px;
 }
 header li{
   margin-left: 20px;
@@ -47,7 +47,7 @@ header h1{
   float: left;
   font-size: 11px/150%;
   vertical-align: middle;
-  line-height: 28px;
+  line-height: 20px;
 }
 header a:hover{
   color: #fafcfd;
