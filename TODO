@@ -1,4 +1,3 @@
-- if same lang on the one side is selected, then switch both
 - about page similar to https://heml.is/
 - jquery image dropdown plugin popup verschwindet bzw. wird überdeckt
 - ladeanimation (während ajax request)
@@ -18,3 +17,9 @@
 #	- Pronunciations http://en.wiktionary.org/wiki/sunshine
 #	- fixed table size
 do autocomplete in table (lighter text color to indicate unfinished result)
+l18n (internationalisation, localisation)
+login box
+remove temp demo "placeholder", real vert align
+inputbox nur text, kein code etc.
+default setzen von $('mySelect').data('pre', $(this).val());
+	select muss am anfang schon data:pre gesetzt haben

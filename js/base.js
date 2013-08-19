@@ -285,25 +285,66 @@ function addOpensearch(){
 
 $(window).load(function(){
 
+	// Initialisation
+	// Init Jquery dropdown with images
 	try {
 	  $("body select").msDropDown();
 	} catch(e) {
 	  alert(e.message);
 	}
 
-  	$('form').submit(function() {
-		var from = $('#from').val();
-		var to = $('#to').val();
-		var word = $('#word').val();
+	// FIXME
+	// Default language pairs
+	$("#to").data('pre', "de");
+	$("#from").data('pre', "en");
+	$("#to").msDropdown().data("dd").set("value", "de");
+	$("#from").msDropdown().data("dd").set("value", "en");
 
-		$('#placeholder').slideUp('slow');
-		$("table tfoot").show();
-		setSearchHistory(from, to, word);
-		translate(from, to, word);
-		setOpensearch(from, to);
-		$( "#word" ).autocomplete( "close" ); //auto-completion fenster schließen
-		return false;
+	// Start translating after changing the language in the dropdown
+	$('select').change(function(e){
+
+	    // We store previous selections and later avoid
+	    // translating into the same direction (e.g. DE-DE)
+	    if ($('#from').val() == $('#to').val()){
+	      switch ($(this).attr('name')) {
+		case "from":
+			var wechsel = $("#from").data('pre').toString();
+			$("#to").msDropdown().data("dd").set("value", wechsel);
+			$(this).data('pre', $(this).val());
+			$("#to").data('pre', wechsel);
+			break;
+		case "to":
+			var wechsel = $("#to").data('pre').toString();
+			$("#from").msDropdown().data("dd").set("value", wechsel);
+			$(this).data('pre', $(this).val());
+			$("#from").data('pre', wechsel);
+			break;
+	      }
+	    } else {
+	      $(this).data('pre', $(this).val());
+	    }
+
+	    // Only submit translation if input box not empty
+	    if ($('#word').val() ) {
+	      $('form').submit();
+	    }	
+
 	});
+
+  	$('form').submit(function() {
+	    var from = $('#from').val();
+	    var to = $('#to').val();
+	    var word = $('#word').val();
+
+	    $('#placeholder').slideUp('slow');
+	    $("table tfoot").show();
+	    setSearchHistory(from, to, word);
+	    translate(from, to, word);
+	    setOpensearch(from, to);
+	    $( "#word" ).autocomplete( "close" ); //auto-completion fenster schließen
+	    return false;
+	});
+
 	$("#word").autocomplete({
 	    source: function(request, response) {
 		$.ajax({

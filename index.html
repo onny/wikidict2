@@ -37,18 +37,15 @@
     <div id="search">
       <input type="search" id="word" value="" placeholder="Text to translate ..." autofocus required>
     </div>
-  <p id=note>This site is under heavy developement and just a tech preview. Some features might be still missing.
-  <a href="#" onclick="$('#note').fadeOut('slow');"><img src=img/note_close.png class="fadeIn"></a>
-
-</p>
-
-  </table>
+  <p id=note>This site is under heavy developement and just a tech preview. Some features might be still missing. <br>Please test this site with a WebKit-browser, e.g. Chromium.
+    <a href="#" onclick="$('#note').fadeOut('slow');"><img src=img/note_close.png class="fadeIn"></a>
+  </p>
 
   <div class="datagrid">
   <table id=result>
   <thead>
     <tr><th>
-      <select onchange="$('form').submit()" name="from" id="from" tabindex="-1">
+      <select name="from" id="from" tabindex="-1">
 	<option value='ab' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag ab" data-title="Abkhazian">Abkhazian</option>
 	<option value='aa' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag aa" data-title="Afar">Afar</option>
 	<option value='af' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag af" data-title="Afrikaans">Afrikaans</option>
@@ -90,7 +87,7 @@
 	<option value='dv' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag dv" data-title="Divehi">Divehi</option>
 	<option value='nl' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag nl" data-title="Dutch">Dutch</option>
 	<option value='dz' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag dz" data-title="Dzongkha">Dzongkha</option>
-	<option value='en' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag en" data-title="English" selected="1">English</option>
+	<option value='en' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag en" data-title="English">English</option>
 	<option value='eo' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag eo" data-title="Esperanto">Esperanto</option>
 	<option value='et' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag et" data-title="Estonian">Estonian</option>
 	<option value='ee' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag ee" data-title="Ewe">Ewe</option>
@@ -234,9 +231,8 @@
 	<option value='za' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag za" data-title="Zhuang">Zhuang</option>
 	<option value='zu' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag zu" data-title="Zulu">Zulu</option>
       </select>
-</th>
-<th>
-      <select onchange="$('form').submit()" name="to" id="to" tabindex="-1">
+    </th><th>
+      <select name="to" id="to" tabindex="-1">
 	<option value='ab' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag ab" data-title="Abkhazian">Abkhazian</option>
 	<option value='aa' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag aa" data-title="Afar">Afar</option>
 	<option value='af' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag af" data-title="Afrikaans">Afrikaans</option>
@@ -290,7 +286,7 @@
 	<option value='gl' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag gl" data-title="Galician">Galician</option>
 	<option value='lg' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag lg" data-title="Ganda">Ganda</option>
 	<option value='ka' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag ka" data-title="Georgian">Georgian</option>
-	<option value='de' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag de" data-title="German" selected="1">German</option>
+	<option value='de' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag de" data-title="German">German</option>
 	<option value='el' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag el" data-title="Greek">Greek</option>
 	<option value='gn' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag gn" data-title="Guarani">Guarani</option>
 	<option value='gu' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag gu" data-title="Gujarati">Gujarati</option>
@@ -422,16 +418,16 @@
 	<option value='za' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag za" data-title="Zhuang">Zhuang</option>
 	<option value='zu' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag zu" data-title="Zulu">Zulu</option>
       </select>
-</th></tr>
-
+    </th></tr>
   </thead>
   <tbody>
   <tr><td colspan="2"><p>Welcome to WikiDict.cc, the free and open online dictionary!</p></td></tr>
   </tbody>
   <tfoot style="display: none;"><tr><td colspan="4"><div id="paging"><ul><li><a href="#"><span>Previous</span></a></li><li><a href="#" class="active"><span>1</span></a></li><li><a href="#"><span>2</span></a></li><li><a href="#"><span>3</span></a></li><li><a href="#"><span>4</span></a></li><li><a href="#"><span>5</span></a></li><li><a href="#"><span>Next</span></a></li></ul></div></tr></tfoot>
-  </table>
-  </div>
+</table>
+</div>
 
+  <!-- FIXME: This is just a workaround for unknown bug -->
   <input type="submit" style="visibility: hidden;">
 
   </form>
