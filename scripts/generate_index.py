@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 # dependencies: yaourt -S python-libtorrent-rasterbar mktorrent 
 
+# TODO
+# - check if dump is newer, only then download it, remove old
+
 import os
 import libtorrent as lt
 import re
@@ -14,6 +17,7 @@ torrenthashlist_file = "whitelist"
 index_file = "downloads.html"
 announce = "http://tracker.project-insanity.org:6969/announce"
 webseed = ""
+entries = []
 
 def debugmsg(msg):
     print(datetime.now().strftime('%Y-%m-%d %H:%M:%S')+": "+msg)
@@ -33,7 +37,7 @@ def scandir(path, level):
     if os.path.exists(path):
         for (path, dirs, files) in walklevel(path,level):
             for item in files:
-                # if pacman package
+                # if archive (dump) file
                 if re.search(r'.xml.bz2$', item):
                     # create torrent file for package if it doesn't already exist
                     if not os.path.isfile(path+"/"+item+".torrent"):
@@ -45,7 +49,13 @@ def scandir(path, level):
                         info_hash = info.info_hash()
                         hexadecimal = str(info_hash)
                         os.system("echo "+hexadecimal+" >> "+torrenthashlist_file)
-                        torrent+=1
+
+                        # Building a list of all files which we later use to
+                        # build the index: itemname, filename, httplink,
+                        #   torrentlink
+                        regex = re.compile(r"([a-z]+)-\d+(-pages-meta-current).*"); 
+                        entries.append([regex.sub(r"\1\2", item), item, webpath+item, webpath+item+'.torrent'])
+
                 # if torrent file
                 if re.search(r'.xml.bz2.torrent$', item):
                     # remove torrent file if the inherent package doesn't exist anymore
@@ -57,12 +67,33 @@ def scandir(path, level):
                         info_hash = info.info_hash()
                         hexadecimal = str(info_hash)
                         os.system("echo "+hexadecimal+" >> "+torrenthashlist_file)
-                    torrent+=1
     else:
         print("File or directory does not exists")
-    return torrent
+    return 0
+
+def create_index(index_file):
+    index = open(index_file, 'w')
+
+    index.write("<h1>Wiktionary dumps</h1>")
+    index.write("<table class='downloads'>")
+    for entry in entries:
+        index.write("""<tr><td>"""+entry[0]+"""</td><td><a
+                    href='"""+entry[2]+"""'>HTTP</a></td><td><a
+                    href='"""+entry[3]+"""'>TORRENT</a></td></tr>""")
+    index.write("</table>")
+
+    index.write("<h1>Bilingual dictionaries</h1>")
+    index.write("<table class='downloads'>")
+    # FROM, TO, SIZE, DICT_FORMAT.bz2 HTTP, DICT_FORMAT.bz2 TORRENT
+    index.write("</table>")
+
+    index.close
+
 
 debugmsg("Start scanning directory "+path)
 scandir(path,1)
-debugmsg("Creating Start scanning directory "+path)
+
+debugmsg("Creating index file "+index_file)
+create_index(index_file)
+
 debugmsg("Creating index finished :)")

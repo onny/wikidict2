@@ -294,11 +294,16 @@ $(window).load(function(){
 	}
 
 	// FIXME
+	// Try to unify "init" into one function
 	// Default language pairs
 	$("#to").data('pre', "de");
 	$("#from").data('pre', "en");
 	$("#to").msDropdown().data("dd").set("value", "de");
 	$("#from").msDropdown().data("dd").set("value", "en");
+	if ( !$.cookie('from') & !$.cookie('to')) {
+	  $.cookie('from', 'de', { expires: 7, path: '/' });
+	  $.cookie('to', 'en', { expires: 7, path: '/' });
+	}
 
 	// Submit translation by pressing return
 	$("input").keypress(function(event) {
@@ -332,6 +337,9 @@ $(window).load(function(){
 	    } else {
 	      $(this).data('pre', $(this).val());
 	    }
+
+	    $.cookie('from', $("#from").val() , { expires: 7, path: '/' });
+	    $.cookie('to', $("#to").val() , { expires: 7, path: '/' });
 
 	    // Only submit translation if input box not empty
 	    if ($('#word').val() ) {

@@ -1,15 +1,13 @@
 - about page similar to https://heml.is/
+- login, logout, manage vocabularies
+- implement, test opensearch 
 - ladeanimation (während ajax request)
-- dropdown on select nur, wenn text in inputbox
-- iso639 flag sprite
-- remember last selected select option
-- wikidict logo position fixed
+- iso639 flag sprite http://www.fatbellyman.com/webstuff/language_codes_639-1/
 - funktionalität der seite ohne js
 - groß- / kleinschreibung
 #	- Firefox/Chrome Such-Plugin
 #	- In der Ergebnistabelle, Vokabeln ergänzen mit Angaben (f/m, plural/singular)
 #	- Tippfehler erkennen und Korrektur vorschlagen
-#	- Dict.cc fallback
 #	- Vokabeln speichern / Liste anlegen
 #	- Eintrag nicht gefunden -> Link zum Anlegen der Seite
 #	- About-Seite: Warum wurde das Projekt gestartet 
@@ -27,13 +25,10 @@ css bugs on non-webkit browsers
 
 downloads (direct/torrent):
 
-	- wiktionary dump
-	- bilingual dictionaries
 	- dictionaries
 	- ispell spell checking
 	- frequency lists
 	- wordnet http://www.cogsci.princeton.edu/~wn/
-
 
 	- conversion
 	  - main resource: http://en.wiktionary.org/wiki/User:Matthias_Buchmeier

@@ -1,5 +1,5 @@
 <?php
-  include('includes/language_codes.php');
+  include('includes/lang/en.php');
   if(isset($_GET['from'])) {
 	  if(isset($languageCodes[$_GET['from']])){
 		  $from = $_GET['from'];
@@ -29,9 +29,10 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-	<script src='js/jquery-1.10.2.min.js'></script>
+	<script type='text/javascript' src='js/jquery-1.10.2.min.js'></script>
 	<script type='text/javascript' src='js/base.js'></script>
 	<script type='text/javascript' src="js/jquery-ui-1.9.2.custom.js"></script>
+	<script type='text/javascript' src="js/jquery.cookie.js"></script>
         <script src="js/msdropdown/jquery.dd.min.js" type="text/javascript"></script>
 
 	<link rel="stylesheet" type="text/css" href="css/msdropdown/dd.css" />
@@ -39,7 +40,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/msdropdown/flags.css">
 
-	<link id="opensearch" title="WikiDict.cc en-de" type="application/opensearchdescription+xml" rel="search" href="opensearch.php?from=en&amp;to=de">
+	<link id="opensearch" title="WikiDict.cc en-de" type="application/opensearchdescription+xml" rel="search" href="includes/opensearch.php?from=en&amp;to=de">
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/">
 	<link rel="copyright" href="//www.gnu.org/copyleft/fdl.html">
@@ -479,13 +480,39 @@
 	if (isset($_GET['p'])) {
 		echo 'showArticle(\''.$_GET['p'].'\');';
 	} else {
-		if(isset($_GET['from']) & isset($_GET['to']) & isset($_GET['q'])){
-		  	echo "$('#placeholder').hide();";
-			echo "$('#to').data('pre', '".$_GET['to']."');";
-			echo "$('#from').data('pre', '".$_GET['from']."');";
-			echo "$('#to').msDropdown().data('dd').set('value', '".$_GET['to']."');";
-			echo "$('#from').msDropdown().data('dd').set('value', '".$_GET['from']."');";
-			echo "$('form').submit()";
+
+	  	// Apply language settings from get parameter, if present.
+	  	// Otherwise check cookies
+		if(isset($_GET['from']) & isset($_GET['to'])){
+		  	$from = $_GET['from'];
+			$to = $_GET['to'];
+			echo "$('#to').data('pre', '".$to."');";
+			echo "$('#from').data('pre', '".$from."');";
+			echo "$('#to').msDropdown().data('dd').set('value', '".$to."');";
+			echo "$('#from').msDropdown().data('dd').set('value', '".$from."');";
+			echo "$.cookie('from', '".$from."' , { expires: 7, path: '/' });";
+			echo "$.cookie('to', '".$to."' , { expires: 7, path: '/' });";
+			// Start translation if query string is present
+			if ( isset($_GET['q']) ){
+			  echo "$('#placeholder').hide();";
+			  echo "$('form').submit()";
+			}
+
+	  	// Apply language settings from cookies, if present
+		} else {
+			if (isset($_COOKIE["from"]) & isset($_COOKIE["to"])) {
+				$from = $_COOKIE["from"];
+				$to = $_COOKIE["to"];
+				echo "$('#to').data('pre', '".$to."');";
+				echo "$('#from').data('pre', '".$from."');";
+				echo "$('#to').msDropdown().data('dd').set('value', '".$to."');";
+				echo "$('#from').msDropdown().data('dd').set('value', '".$from."');";
+				// Start translation if query string is present
+				if ( isset($_GET['q']) ){
+				  echo "$('#placeholder').hide();";
+				  echo "$('form').submit()";
+				}
+			}
 		}
 	}
 	echo '">';
