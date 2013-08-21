@@ -1,3 +1,29 @@
+<?php
+  include('includes/language_codes.php');
+  if(isset($_GET['from'])) {
+	  if(isset($languageCodes[$_GET['from']])){
+		  $from = $_GET['from'];
+	  }
+  } else {
+	  // passed language code is not correct, lets fallback
+	  // to the default 
+	  $from = "en";
+  }
+  if(isset($_GET['to'])) {
+	  if(isset($languageCodes[$_GET['to']])){
+		  $to = $_GET['to'];
+	  }
+  } else {
+	  // passed language code is not correct, lets fallback
+	  // to the default 
+	  $to = "de";
+  }
+  if(isset($_GET['q'])){
+	  $q = $_GET['q'];
+  } else {
+	  $q = "";
+  }
+?> 
 <!doctype html>
 <html>
 <head>
@@ -35,7 +61,7 @@
   <section>
   <form id="form" class="form-inline">
     <div id="search">
-      <input type="search" id="word" value="" placeholder="Text to translate ..." autofocus required>
+      <input type="search" id="word" value="<?=$q?>" placeholder="Text to translate ..." autofocus required>
     </div>
   <p id=note>This site is under heavy developement and just a tech preview. Some features might be still missing. <br>Please test this site with a WebKit-browser, e.g. Chromium.
     <a href="#" onclick="$('#note').fadeOut('slow');"><img src=img/note_close.png class="fadeIn"></a>
@@ -46,6 +72,14 @@
   <thead>
     <tr><th>
       <select name="from" id="from" tabindex="-1">
+	<!-- FIXME <?php
+	foreach ($languageCodes as $key => $value)
+	  if($key == $from) { 
+	    echo "<option selected='selected' value='".$key."'>".$value." (".$key.")</option>";
+	  } else {
+	    echo "<option value='".$key."'>".$value." (".$key.")</option>";
+	  }
+	?> -->
 	<option value='ab' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag ab" data-title="Abkhazian">Abkhazian</option>
 	<option value='aa' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag aa" data-title="Afar">Afar</option>
 	<option value='af' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag af" data-title="Afrikaans">Afrikaans</option>
@@ -233,6 +267,14 @@
       </select>
     </th><th>
       <select name="to" id="to" tabindex="-1">
+	<!-- FIXME <?php
+	foreach ($languageCodes as $key => $value)
+	  if($key == $from) { 
+	    echo "<option selected='selected' value='".$key."'>".$value." (".$key.")</option>";
+	  } else {
+	    echo "<option value='".$key."'>".$value." (".$key.")</option>";
+	  }
+	?> -->
 	<option value='ab' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag ab" data-title="Abkhazian">Abkhazian</option>
 	<option value='aa' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag aa" data-title="Afar">Afar</option>
 	<option value='af' data-image="img/msdropdown/icons/blank.gif" data-imagecss="flag af" data-title="Afrikaans">Afrikaans</option>
@@ -427,12 +469,25 @@
 </table>
 </div>
 
-  <!-- FIXME: This is just a workaround for unknown bug -->
-  <input type="submit" style="visibility: hidden;">
-
   </form>
 
   </section>
   </div>
 </body>
+<?php 
+	echo'<body onload="';
+	if (isset($_GET['p'])) {
+		echo 'showArticle(\''.$_GET['p'].'\');';
+	} else {
+		if(isset($_GET['from']) & isset($_GET['to']) & isset($_GET['q'])){
+		  	echo "$('#placeholder').hide();";
+			echo "$('#to').data('pre', '".$_GET['to']."');";
+			echo "$('#from').data('pre', '".$_GET['from']."');";
+			echo "$('#to').msDropdown().data('dd').set('value', '".$_GET['to']."');";
+			echo "$('#from').msDropdown().data('dd').set('value', '".$_GET['from']."');";
+			echo "$('form').submit()";
+		}
+	}
+	echo '">';
+?>
 </html>

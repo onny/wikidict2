@@ -300,7 +300,16 @@ $(window).load(function(){
 	$("#to").msDropdown().data("dd").set("value", "de");
 	$("#from").msDropdown().data("dd").set("value", "en");
 
-	// Start translating after changing the language in the dropdown
+	// Submit translation by pressing return
+	$("input").keypress(function(event) {
+	      if (event.which == 13) {
+		event.preventDefault();
+		$("form").submit();
+	      }
+	});
+
+	// Submit translation on select event
+	// e.g. by changing the  language in the dropdown
 	$('select').change(function(e){
 
 	    // We store previous selections and later avoid

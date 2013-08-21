@@ -1,5 +1,4 @@
 - about page similar to https://heml.is/
-- jquery image dropdown plugin popup verschwindet bzw. wird überdeckt
 - ladeanimation (während ajax request)
 - dropdown on select nur, wenn text in inputbox
 - iso639 flag sprite
@@ -23,3 +22,40 @@ remove temp demo "placeholder", real vert align
 inputbox nur text, kein code etc.
 default setzen von $('mySelect').data('pre', $(this).val());
 	select muss am anfang schon data:pre gesetzt haben
+grep -ir "FIXME" .
+css bugs on non-webkit browsers
+
+downloads (direct/torrent):
+
+	- wiktionary dump
+	- bilingual dictionaries
+	- dictionaries
+	- ispell spell checking
+	- frequency lists
+	- wordnet http://www.cogsci.princeton.edu/~wn/
+
+
+	- conversion
+	  - main resource: http://en.wiktionary.org/wiki/User:Matthias_Buchmeier
+	  - formats: dictd & dict
+	  - python-relaxml: Converting XML to a dictionary should be easy -- and fast.
+	  - python2-dictshield - Python Library for typed dictionaries... sorta
+	  - python-wikitools - Python scripts and modules to interact with the MediaWiki API
+	  - python2-creoleparser: Parser for the Creole common wiki markup language
+	  - python2-dictlib: Generate files for dictd server [Python] (unmaintained)
+	  - http://gopher.quux.org:70/devel/dictclient - python dict client
+	  - http://gopher.quux.org:70/devel/dictdlib - python lib generating dict files 
+
+	- desktop
+	  - desktop client http://www-user.tu-chemnitz.de/~fri/ding/
+	- server
+	  - dictd server as backend
+	  	- needs json api
+		- https://github.com/ptrm/dict.json
+		- http://stu.mp/2005/08/php-ajax-dictd-interface.html
+	  - dictd webfrontends:
+		  - http://www.dict.org/bin/Dict
+		  - freedict.org
+		  - http://machaut.uchicago.edu/?resource=frengdict
+		  - http://www.dict.org/w/software/web
+	  - http://www.dict.org/links.html
