@@ -1,4 +1,3 @@
-- about page similar to https://heml.is/
 - login, logout, manage vocabularies
 - implement, test opensearch 
 - ladeanimation (während ajax request)
@@ -18,20 +17,16 @@ l18n (internationalisation, localisation)
 login box
 remove temp demo "placeholder", real vert align
 inputbox nur text, kein code etc.
-default setzen von $('mySelect').data('pre', $(this).val());
-	select muss am anfang schon data:pre gesetzt haben
 grep -ir "FIXME" .
-css bugs on non-webkit browsers
 
 downloads (direct/torrent):
 
-	- dictionaries
+	- defenition dictionaries
 	- ispell spell checking
 	- frequency lists
 	- wordnet http://www.cogsci.princeton.edu/~wn/
 
 	- conversion
-	  - main resource: http://en.wiktionary.org/wiki/User:Matthias_Buchmeier
 	  - formats: dictd & dict
 	  - python-relaxml: Converting XML to a dictionary should be easy -- and fast.
 	  - python2-dictshield - Python Library for typed dictionaries... sorta
@@ -45,12 +40,100 @@ downloads (direct/torrent):
 	  - desktop client http://www-user.tu-chemnitz.de/~fri/ding/
 	- server
 	  - dictd server as backend
-	  	- needs json api
-		- https://github.com/ptrm/dict.json
-		- http://stu.mp/2005/08/php-ajax-dictd-interface.html
+		- webfrontend <-> ajax <-> json <-> https://github.com/ptrm/dict.json <-> dict server
+		  - http://pear.php.net/package/Net_Dict
+		  - http://stu.mp/2005/08/php-ajax-dictd-interface.html
 	  - dictd webfrontends:
-		  - http://www.dict.org/bin/Dict
-		  - freedict.org
 		  - http://machaut.uchicago.edu/?resource=frengdict
 		  - http://www.dict.org/w/software/web
 	  - http://www.dict.org/links.html
+
+merge:
+
+- In der Ergebnistabelle, Vokabeln ergänzen mit Angaben (f/m, plural/singular)
+- Vokabeln speichern / Liste anlegen
+- Pronunciations http://en.wiktionary.org/wiki/sunshine
+- offer daily dict snapshots as torrent in various open dict formats (there are some dumping projects on github)
+- ignore case per default
+- fade effect
+- siehe beispiel, wie form inputs validiert werden können http://api.jquery.com/submit/
+- mutmaßlicher bug: wort 'double sharp' linkt nicht mehr richtig wegen leerzeichen
+- suchen in beide richtungen
+- escape wrong input (security)
+- making a new search, rewriting url to set get params
+- beispiel, mit einer api query alles wichtige fetchen http://de.wiktionary.org/w/api.php?action=parse&format=json&prop=templates|iwlinks&page=Sonnenschein
+- #word: replace spaces with _
+- rewrite #home/#about/#tools/#imprent in url, use modrewrite for index.php?p=about/...
+- autocomplete onselect does not get word-property correctly and does not sethidstory etc.
+- parser code, example (there are more on GitHub): http://code.google.com/p/jwiktionarytranslationparser/
+- the translation tables of wiktionary also refers to semantics:
+	- {{trans-top|to change the form or structure of}} (translation entry for 'to alter')
+	- there may exist more than one translation for the same vocabulary with different meanings
+	- one could append the semantics in square brackets after the word in the translation table
+- other possible rewrite: /[a-z] -> ?p= (letters but without following /, so that files in css/js/images-dirs won't get redirected)
+- opensearch autocompletion
+
+- resources:
+	- convert
+	  - https://github.com/newca12/dictionary-builder
+	  - https://github.com/tkedwards/wiktionarytodict
+	  - https://github.com/juditacs/wikt2dict
+	  - https://github.com/clbecker/perl-wiktionary-parser/
+	- http://wordnetweb.princeton.edu/perl/webwn
+	- http://en.wiktionary.org/wiki/User:Matthias_Buchmeier
+	- https://github.com/djstrong/PL-Wiktionary-To-Dictionary
+	- https://github.com/sullerandras/HTML-dictionary
+	- stardict-babylon-en-es 2.4.2-3 http://mirror.transact.net.au/sourceforge/s/project/st/stardictdata/English/stardict-babylon-Babylon_English_Spanish-2.4.2.tar.bz2
+	- stardict-en-fr 2.4.2-1 http://yeelou.com/huzheng/stardict-dic/zh_CN/stardict-woaifayu-ef-2.4.2.tar.bz2
+	- stardict-freedict-de-fr 2.4.2-2 http://www.huzheng.org/stardict-iso/stardict-dic/freedict.de/stardict-freedict-deu-fra-2.4.2.tar.bz2
+	- http://wiktionary-export.nataraj.su/en/about.html
+	- http://code.google.com/p/jwiktionarytranslationparser/
+
+- similar projects:	
+	- http://webxicon.org
+
+- dictionary format research:
+	- http://goldendict.org/dictionaries.php (list of dictionary formats)
+	- lingvo to stardict http://code.google.com/p/stardict-3/wiki/ConvertLingvo
+	- babylon to stardict http://code.google.com/p/stardict-3/wiki/ConvertBabylon
+	- documentation about the stardict format http://code.google.com/p/babiloo/wiki/StarDict_format
+	- http://dictionarymid.sourceforge.net/dict.html
+	- http://www.dicts.info/
+	- http://www.dicts.info/dictionaries.php
+	- http://www.stardict.org/HowToCreateDictionary
+	- http://wiki.tei-c.org/index.php/FreeDict (DICT, Evolutionary Dictionary, zbedic)
+	- http://jalasthana.de/?p=828 (use stardict-editor from stardict-tools to convert tab-file to stardict)
+	- lol nice? http://sourceforge.net/projects/xdxf/ XML Dictionary Exchange Format
+	- http://en.wikipedia.org/wiki/DicML
+	- http://en.wikipedia.org/wiki/Universal_Terminology_eXchange
+	- zbedic, Evolutionary Dictionary and Opendict
+	- http://aarddict.org
+	- EDICT format http://filosofie.unibuc.ro/~solcan/wt/gnu/s/stardict.html
+	- http://www.linuxlinks.com/article/20110131141441347/JaLingo.html:
+	Dictionary Specification Language (DSL)
+	Mova (used in Mueller and Transmagus dictionaries)
+	PtkDict/phpMyLingvo MySQL dumps
+	Sdictionary from Sdictionary community site
+	- LDF http://www.lingoes.net/en/dictionary/dict_format.php
+	- apertium dix format http://wiki.apertium.org/wiki/Bilingual_dictionary
+	- oxford universal press bilingual dict format http://www.oup.com/us/catalog/general/subject/Reference/BilingualDictionaries/
+http://linguae.stalikez.info/
+
+- voclists:
+	- möglichkeit name zu ändern
+	- allen php fu ordentlich absichern gegen sqlinjections etc.
+	- append new voc lists into the context menu
+	  - contextmenu runtime creation https://github.com/medialize/jQuery-contextMenu/issues/15
+	- kein contextmenü auf meldungen wie "eintrag nicht gefunden", bla
+	- see index.php:73
+	- return codes für voclist_add(): 1: sucess, 0: error, 2: entry already exists
+	- return codes für voclist_content_add(): 1: sucess, 0: error, 2: entry already exists
+	  - dran denken: asynchrones ajax
+	- auf error-meldung kein contextmenu
+	- wenn vocliste gelöscht, dann auch dessen einträge
+http://image.bayimg.com/acc2cdf8c96ab06626a29850e9090c29e5d6f4f1.jpg
+	- get voclist_content, immer noch abfrage zu sessionid
+	- beim generieren der liste darauf achten, dass die sprachrichtung in der tabelle einheitlich bleibt
+
+common exceptions:
+http://en.wiktionary.org/wiki/convertion

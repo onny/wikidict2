@@ -14,7 +14,7 @@ path = "dumps/"
 webpath = "http://onny.project-insanity.org/wikidict-neu/files/"
 mktorrent_bin = "/usr/bin/mktorrent"
 torrenthashlist_file = "whitelist"
-index_file = "downloads.html"
+index_file = "downloads"
 announce = "http://tracker.project-insanity.org:6969/announce"
 webseed = ""
 entries = []
@@ -74,18 +74,23 @@ def scandir(path, level):
 def create_index(index_file):
     index = open(index_file, 'w')
 
-    index.write("<h1>Wiktionary dumps</h1>")
-    index.write("<table class='downloads'>")
+    index.write("<div id='index'><p>Index:</p><ul><li><a href=#wiktionary_dumps>Wiktionary dumps</a></li><li><a href=#bilingual_dictionaries>Bilingual dictionaries</a></li></ul></div>\n")
+    index.write("<a name='wiktionary_dumps'></a>\n")
+    index.write("<h3>Wiktionary dumps</h3>\n")
+    index.write("<p class=timestamp>Last update: 2013-08-20</p>\n") # FIXME correct time
+    index.write("<table class='downloads'>\n")
     for entry in entries:
-        index.write("""<tr><td>"""+entry[0]+"""</td><td><a
+        index.write("""<tr><td>"""+entry[0]+"""</td><td>1 MB</td><td><a
                     href='"""+entry[2]+"""'>HTTP</a></td><td><a
-                    href='"""+entry[3]+"""'>TORRENT</a></td></tr>""")
-    index.write("</table>")
+                    href='"""+entry[3]+"""'>TORRENT</a></td></tr>\n""")
+    index.write("</table>\n")
 
-    index.write("<h1>Bilingual dictionaries</h1>")
-    index.write("<table class='downloads'>")
+    index.write("<a name='bilingual_dictionaries'></a>")
+    index.write("<h3>Bilingual dictionaries</h3>\n")
+    index.write("<p class=timestamp>Last update: 2013-08-20</p>\n") # FIXME corrent time
+    index.write("<table class='downloads'>\n")
     # FROM, TO, SIZE, DICT_FORMAT.bz2 HTTP, DICT_FORMAT.bz2 TORRENT
-    index.write("</table>")
+    index.write("</table>\n")
 
     index.close
 

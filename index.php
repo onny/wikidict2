@@ -28,10 +28,12 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
 	<script type='text/javascript' src='js/jquery-1.10.2.min.js'></script>
 	<script type='text/javascript' src='js/base.js'></script>
-	<script type='text/javascript' src="js/jquery-ui-1.9.2.custom.js"></script>
+	<script type='text/javascript' src="js/jquery-ui-1.10.3.custom.min.js"></script>
 	<script type='text/javascript' src="js/jquery.cookie.js"></script>
         <script src="js/msdropdown/jquery.dd.min.js" type="text/javascript"></script>
 
@@ -50,7 +52,7 @@
 </head>
 <body>
 <header>
-  <a href="javascript:article('index');"><h1>WikiDict.cc</h1></a>
+  <a href="http://wikidict.cc"><h1>WikiDict.cc</h1></a> <!-- FIXME to ajax -->
   <ul>
     <li><a href="javascript:article('downloads');">Downloads</a></li>
     <li><a href="javascript:article('about');">About</a></li>
@@ -64,8 +66,7 @@
     <div id="search">
       <input type="search" id="word" value="<?=$q?>" placeholder="Text to translate ..." autofocus required>
     </div>
-  <p id=note>This site is under heavy developement and just a tech preview. Some features might be still missing. <br>Please test this site with a WebKit-browser, e.g. Chromium.
-    <a href="#" onclick="$('#note').fadeOut('slow');"><img src=img/note_close.png class="fadeIn"></a>
+  <p id=note>This site is under heavy developement and just a tech preview. Some features might be still missing. <a href="#" onclick="$('#note').fadeOut('slow');"><img src=img/note_close.png class="fadeIn"></a>
   </p>
 
   <div class="datagrid">

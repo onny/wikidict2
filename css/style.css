@@ -1,4 +1,6 @@
-// Resetting some CSS styles
+// General CSS
+
+// Resetting some CSS
 h1, ul, li{
   margin: 0;
   padding: 0;
@@ -8,14 +10,23 @@ h1, ul, li{
   vertical-align: baseline;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box;
+    -moz-box-sizing: border-box; }
+
 body{
   width: 100%;
   margin:0px 0px; padding:0px;
   background: #f4f8fb;
   font: normal 12px/150% Verdana, Arial, Helvetica, sans-serif; 
-  color: #222;
+  color: #797979;
   text-align: center;
+}
+a{
+  text-decoration: none;
+  color: #5c9bc9;
+}
+a:hover{
+  text-decoration: underline;
 }
 header{
   background-color: #183149;
@@ -43,14 +54,15 @@ header a{
   font-family: sans-serif;
   font-weight: bold;
 }
+header a:hover{
+  color: #fafcfd;
+  text-decoration: none;
+}
 header h1{
   float: left;
   font-size: 11px/150%;
   vertical-align: middle;
   line-height: 15px;
-}
-header a:hover{
-  color: #fafcfd;
 }
 #container {
   clear: both;
@@ -59,9 +71,45 @@ header a:hover{
   text-align:left;
   padding: 20px 10px;
 } 
+#container #index{
+  padding: 5px 0px 5px 10px;
+  border-color: #abcbe3;
+  background-color: #e8f1f7;
+  border-width: 1px;
+  border-style: solid;
+  width: 100%;
+}
+#container #index p{
+  display: inline;
+  margin-right: -23px;
+}
+#container #index ul{
+  list-style-type: none;
+  display: inline;
+}
+#container #index li{
+  display: inline;
+  margin-right: 15px;
+}
+#container table.downloads{
+  width: 100%;
+}
+#container table.downloads tr td { padding-left: 15px; white-space: nowrap; }
+#container tr.downloads td:first-child { width: 100%; padding-left: 0px; }
+#container h3{
+  border-bottom: 1px dotted #bbb;
+}
+#container .timestamp{
+  float: right;
+  font-size: .85em;
+  margin: -3em .5em 0 0;
+}
+@media screen and (min-width: 600px) {
 #placeholder {
   height: 250px;
 }
+}
+
 /* section{
   padding: 15px;
   border-color: #abcbe3;
