@@ -64,14 +64,14 @@ header h1{
   vertical-align: middle;
   line-height: 15px;
 }
-#container {
+#container, #subpage {
   clear: both;
   max-width:900px;
   margin:0px auto;
   text-align:left;
   padding: 20px 10px;
 } 
-#container #index{
+#subpage #index{
   padding: 5px 0px 5px 10px;
   border-color: #abcbe3;
   background-color: #e8f1f7;
@@ -79,27 +79,27 @@ header h1{
   border-style: solid;
   width: 100%;
 }
-#container #index p{
+#subpage #index p{
   display: inline;
   margin-right: -23px;
 }
-#container #index ul{
+#subpage #index ul{
   list-style-type: none;
   display: inline;
 }
-#container #index li{
+#subpage #index li{
   display: inline;
   margin-right: 15px;
 }
-#container table.downloads{
+#subpage table.downloads{
   width: 100%;
 }
-#container table.downloads tr td { padding-left: 15px; white-space: nowrap; }
-#container tr.downloads td:first-child { width: 100%; padding-left: 0px; }
-#container h3{
+#subpage table.downloads tr td { padding-left: 15px; white-space: nowrap; }
+#subpage tr.downloads td:first-child { width: 100%; padding-left: 0px; }
+#subpage h3{
   border-bottom: 1px dotted #bbb;
 }
-#container .timestamp{
+#subpage .timestamp{
   float: right;
   font-size: .85em;
   margin: -3em .5em 0 0;
@@ -138,34 +138,34 @@ header h1{
   padding-right: 3px;
 }
 
-.datagrid table { border-collapse: collapse; width: 100%; } 
-.datagrid {font: normal 12px/150% Verdana, Arial, Helvetica, sans-serif; background: #fff; border: 1px solid #006699; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
-.datagrid table td, .datagrid table th { padding: 3px 10px; }
-.datagrid table thead th {
+.translate table { border-collapse: collapse; width: 100%; } 
+.translate {font: normal 12px/150% Verdana, Arial, Helvetica, sans-serif; background: #fff; border: 1px solid #006699; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+.translate table td, .translate table th { padding: 3px 10px; }
+.translate table thead th {
   background: #3778A6;
   color:#FFFFFF; 
   font-size: 15px; font-weight: bold; 
   border-left: 1px solid #0070A8; 
   width: 50%;
 }
-.datagrid table thead th:first-child { border: none; }
-.datagrid table tbody td { color: #00496B; border-left: 1px solid #E1EEF4;font-size: 16px;font-weight: normal; padding-top: 5px;}
-.datagrid table tbody td:first-child { border-left: none; }
-.datagrid table tbody tr:last-child td { border-bottom: none; }
-.datagrid table tbody tr:nth-child(2n){ background-color: #f4f8fb; }
-.datagrid table tfoot td div { border-top: 1px solid #006699;background: #E1EEF4;}
-.datagrid table tfoot td { padding: 0; font-size: 12px }
-.datagrid table tfoot td div{ padding: 6px; }
-.datagrid table tfoot td ul { margin: 0; padding:0; list-style: none; text-align: right; }
-.datagrid table tfoot  li { display: inline; }
-.datagrid table tfoot li a { text-decoration: none; display: inline-block;  padding: 2px 8px; margin: 1px;color: #FFFFFF;border: 1px solid #006699;-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #3778A6) );background:-moz-linear-gradient( center top, #006699 5%, #3778A6 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#3778A6');background-color:#006699; }
-.datagrid table tfoot ul.active, .datagrid table tfoot ul a:hover { text-decoration: none;border-color: #006699; color: #FFFFFF; background: none; background-color:#00557F;}
-.datagrid table tbody td p{ padding: 5px; text-align: center; }
-.datagrid{
+.translate table thead th:first-child { border: none; }
+.translate table tbody td { color: #00496B; border-left: 1px solid #E1EEF4;font-size: 16px;font-weight: normal; padding-top: 5px;}
+.translate table tbody td:first-child { border-left: none; }
+.translate table tbody tr:last-child td { border-bottom: none; }
+.translate table tbody tr:nth-child(2n){ background-color: #f4f8fb; }
+.translate table tfoot td div { border-top: 1px solid #006699;background: #E1EEF4;}
+.translate table tfoot td { padding: 0; font-size: 12px }
+.translate table tfoot td div{ padding: 6px; }
+.translate table tfoot td ul { margin: 0; padding:0; list-style: none; text-align: right; }
+.translate table tfoot  li { display: inline; }
+.translate table tfoot li a { text-decoration: none; display: inline-block;  padding: 2px 8px; margin: 1px;color: #FFFFFF;border: 1px solid #006699;-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #3778A6) );background:-moz-linear-gradient( center top, #006699 5%, #3778A6 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#3778A6');background-color:#006699; }
+.translate table tfoot ul.active, .translate table tfoot ul a:hover { text-decoration: none;border-color: #006699; color: #FFFFFF; background: none; background-color:#00557F;}
+.translate table tbody td p{ padding: 5px; text-align: center; }
+.translate{
   margin-top: 10px;
 }
 
-.datagrid table tbody a{
+.translate table tbody a{
   text-decoration: none;
   color: #00496B;
 }

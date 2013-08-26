@@ -1,84 +1,54 @@
-- login, logout, manage vocabularies
-- implement, test opensearch 
-- ladeanimation (während ajax request)
-- iso639 flag sprite http://www.fatbellyman.com/webstuff/language_codes_639-1/
-- funktionalität der seite ohne js
-- groß- / kleinschreibung
-#	- Firefox/Chrome Such-Plugin
-#	- In der Ergebnistabelle, Vokabeln ergänzen mit Angaben (f/m, plural/singular)
-#	- Tippfehler erkennen und Korrektur vorschlagen
-#	- Vokabeln speichern / Liste anlegen
-#	- Eintrag nicht gefunden -> Link zum Anlegen der Seite
-#	- About-Seite: Warum wurde das Projekt gestartet 
-#	- Pronunciations http://en.wiktionary.org/wiki/sunshine
-#	- fixed table size
-do autocomplete in table (lighter text color to indicate unfinished result)
-l18n (internationalisation, localisation)
-login box
-remove temp demo "placeholder", real vert align
-inputbox nur text, kein code etc.
-grep -ir "FIXME" .
+ui:
+  - fade effect (on page change?)
+  - ladeanimation (während ajax request)
+  - remove temp demo "placeholder", real vert align
+  - do autocomplete in table (lighter text color to indicate unfinished result) (IDEAR)
 
-downloads (direct/torrent):
+core:
+  - ajax page load
+  	- remember search query in get while switching pages: index?from=... -> downloads -> index
+  - rewrite #home/#about/#tools/#imprent in url, use modrewrite for index.php?p=about/...
+  - l18n (internationalisation, localisation)
+  - funktionalität der seite ohne js
+  - grep -ir "FIXME" .
 
-	- defenition dictionaries
-	- ispell spell checking
-	- frequency lists
-	- wordnet http://www.cogsci.princeton.edu/~wn/
+features:
+  - Vokabeln speichern / Liste anlegen
+  - login, logout, manage vocabularies (
+  - opensearch autocompletion (test)
+  - Tippfehler erkennen und Korrektur vorschlagen
 
-	- conversion
-	  - formats: dictd & dict
-	  - python-relaxml: Converting XML to a dictionary should be easy -- and fast.
-	  - python2-dictshield - Python Library for typed dictionaries... sorta
-	  - python-wikitools - Python scripts and modules to interact with the MediaWiki API
-	  - python2-creoleparser: Parser for the Creole common wiki markup language
-	  - python2-dictlib: Generate files for dictd server [Python] (unmaintained)
-	  - http://gopher.quux.org:70/devel/dictclient - python dict client
-	  - http://gopher.quux.org:70/devel/dictdlib - python lib generating dict files 
+content:
+  - vocabulary:
+    - Pronunciations http://en.wiktionary.org/wiki/sunshine
+    - In der Ergebnistabelle, Vokabeln ergänzen mit Angaben (f/m, plural/singular)
+  - downloads:
+    - offer daily dict snapshots as torrent in various open dict formats (there are some dumping projects on github)
 
-	- desktop
-	  - desktop client http://www-user.tu-chemnitz.de/~fri/ding/
-	- server
-	  - dictd server as backend
-		- webfrontend <-> ajax <-> json <-> https://github.com/ptrm/dict.json <-> dict server
-		  - http://pear.php.net/package/Net_Dict
-		  - http://stu.mp/2005/08/php-ajax-dictd-interface.html
-	  - dictd webfrontends:
-		  - http://machaut.uchicago.edu/?resource=frengdict
-		  - http://www.dict.org/w/software/web
-	  - http://www.dict.org/links.html
+search:
+  - generic:
+    - escape wrong input (security): input field (html5 regex or something) and submit form 
+    - suchen in beide richtungen
+    - ignore case per default
+  - wiktionary api:
+    - #word: replace spaces with _
+      - mutmaßlicher bug: wort 'double sharp' linkt nicht mehr richtig wegen leerzeichen
 
-merge:
-
-- In der Ergebnistabelle, Vokabeln ergänzen mit Angaben (f/m, plural/singular)
-- Vokabeln speichern / Liste anlegen
-- Pronunciations http://en.wiktionary.org/wiki/sunshine
-- offer daily dict snapshots as torrent in various open dict formats (there are some dumping projects on github)
-- ignore case per default
-- fade effect
-- siehe beispiel, wie form inputs validiert werden können http://api.jquery.com/submit/
-- mutmaßlicher bug: wort 'double sharp' linkt nicht mehr richtig wegen leerzeichen
-- suchen in beide richtungen
-- escape wrong input (security)
-- making a new search, rewriting url to set get params
-- beispiel, mit einer api query alles wichtige fetchen http://de.wiktionary.org/w/api.php?action=parse&format=json&prop=templates|iwlinks&page=Sonnenschein
-- #word: replace spaces with _
-- rewrite #home/#about/#tools/#imprent in url, use modrewrite for index.php?p=about/...
-- autocomplete onselect does not get word-property correctly and does not sethidstory etc.
-- parser code, example (there are more on GitHub): http://code.google.com/p/jwiktionarytranslationparser/
-- the translation tables of wiktionary also refers to semantics:
-	- {{trans-top|to change the form or structure of}} (translation entry for 'to alter')
-	- there may exist more than one translation for the same vocabulary with different meanings
-	- one could append the semantics in square brackets after the word in the translation table
-- other possible rewrite: /[a-z] -> ?p= (letters but without following /, so that files in css/js/images-dirs won't get redirected)
-- opensearch autocompletion
+misc:
+  - beispiel, mit einer api query alles wichtige fetchen http://de.wiktionary.org/w/api.php?action=parse&format=json&prop=templates|iwlinks&page=Sonnenschein
+  - the translation tables of wiktionary also refers to semantics:
+    - {{trans-top|to change the form or structure of}} (translation entry for 'to alter')
+    - there may exist more than one translation for the same vocabulary with different meanings
+    - one could append the semantics in square brackets after the word in the translation table
+  - other possible rewrite: /[a-z] -> ?p= (letters but without following /, so that files in css/js/images-dirs won't get redirected)
 
 - resources:
-	- convert
-	  - https://github.com/newca12/dictionary-builder
-	  - https://github.com/tkedwards/wiktionarytodict
-	  - https://github.com/juditacs/wikt2dict
-	  - https://github.com/clbecker/perl-wiktionary-parser/
+  - convert
+    - https://github.com/newca12/dictionary-builder
+    - https://github.com/tkedwards/wiktionarytodict
+    - https://github.com/juditacs/wikt2dict
+    - https://github.com/clbecker/perl-wiktionary-parser/
+    - http://code.google.com/p/jwiktionarytranslationparser/
 	- http://wordnetweb.princeton.edu/perl/webwn
 	- http://en.wiktionary.org/wiki/User:Matthias_Buchmeier
 	- https://github.com/djstrong/PL-Wiktionary-To-Dictionary
@@ -87,10 +57,36 @@ merge:
 	- stardict-en-fr 2.4.2-1 http://yeelou.com/huzheng/stardict-dic/zh_CN/stardict-woaifayu-ef-2.4.2.tar.bz2
 	- stardict-freedict-de-fr 2.4.2-2 http://www.huzheng.org/stardict-iso/stardict-dic/freedict.de/stardict-freedict-deu-fra-2.4.2.tar.bz2
 	- http://wiktionary-export.nataraj.su/en/about.html
-	- http://code.google.com/p/jwiktionarytranslationparser/
+  - similar projects:	
+    - http://webxicon.org
+    downloads (direct/torrent):
+	    - defenition dictionaries
+	    - ispell spell checking
+	    - frequency lists
+	    - wordnet http://www.cogsci.princeton.edu/~wn/
 
-- similar projects:	
-	- http://webxicon.org
+	    - conversion
+	      - formats: dictd & dict
+	      - python-relaxml: Converting XML to a dictionary should be easy -- and fast.
+	      - python2-dictshield - Python Library for typed dictionaries... sorta
+	      - python-wikitools - Python scripts and modules to interact with the MediaWiki API
+	      - python2-creoleparser: Parser for the Creole common wiki markup language
+	      - python2-dictlib: Generate files for dictd server [Python] (unmaintained)
+	      - http://gopher.quux.org:70/devel/dictclient - python dict client
+	      - http://gopher.quux.org:70/devel/dictdlib - python lib generating dict files 
+
+	    - desktop
+	      - desktop client http://www-user.tu-chemnitz.de/~fri/ding/
+	    - server
+	      - dictd server as backend
+		    - webfrontend <-> ajax <-> json <-> https://github.com/ptrm/dict.json <-> dict server
+		      - http://pear.php.net/package/Net_Dict
+		      - http://stu.mp/2005/08/php-ajax-dictd-interface.html
+	      - dictd webfrontends:
+		      - http://machaut.uchicago.edu/?resource=frengdict
+		      - http://www.dict.org/w/software/web
+	      - http://www.dict.org/links.html
+
 
 - dictionary format research:
 	- http://goldendict.org/dictionaries.php (list of dictionary formats)
@@ -137,3 +133,5 @@ http://image.bayimg.com/acc2cdf8c96ab06626a29850e9090c29e5d6f4f1.jpg
 
 common exceptions:
 http://en.wiktionary.org/wiki/convertion
+
+search engine optimization - meta tags

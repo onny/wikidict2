@@ -52,12 +52,14 @@
 </head>
 <body>
 <header>
-  <a href="http://wikidict.cc"><h1>WikiDict.cc</h1></a> <!-- FIXME to ajax -->
+  <a href="javascript:article('index');"><h1>WikiDict.cc</h1></a> <!-- FIXME to ajax -->
   <ul>
     <li><a href="javascript:article('downloads');">Downloads</a></li>
     <li><a href="javascript:article('about');">About</a></li>
   </ul>
 </header>
+<div id=subpage>
+</div>
 <div id=container>
   <div id="placeholder">
   </div>
@@ -69,7 +71,7 @@
   <p id=note>This site is under heavy developement and just a tech preview. Some features might be still missing. <a href="#" onclick="$('#note').fadeOut('slow');"><img src=img/note_close.png class="fadeIn"></a>
   </p>
 
-  <div class="datagrid">
+  <div class="translate">
   <table id=result>
   <thead>
     <tr><th>

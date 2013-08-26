@@ -262,13 +262,19 @@ function article(page) {
 }
 
 function showArticle(page) {
-	$('#result').hide();
-	$('#container').load(page);
+  	if (page=="index"){
+	  $('#container').show();
+	  $('#subpage').hide();
+	} else {
+	  $('#container').hide();
+	  $('#subpage').show();
+	  $('#subpage').load(page);
+	}
 }
 
 function setArticleHistory(page) {
 	window.document.title = "WikiDict.cc - " + page;	
-	history.pushState({page: page}, "WikiDict.cc - " + page, page + ".html");
+	history.pushState({page: page}, "WikiDict.cc - " + page, page);
 }
 
 function setOpensearch(from, to) {
