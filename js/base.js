@@ -262,7 +262,7 @@ function article(page) {
 }
 
 function showArticle(page) {
-  	if (page=="index"){
+  	if (page==""){
 	  $('#container').show();
 	  $('#subpage').hide();
 	} else {
@@ -273,8 +273,13 @@ function showArticle(page) {
 }
 
 function setArticleHistory(page) {
-	window.document.title = "WikiDict.cc - " + page;	
-	history.pushState({page: page}, "WikiDict.cc - " + page, page);
+  	if (page==""){
+	  window.document.title = "WikiDict.cc";	
+	  history.pushState({page: page}, "WikiDict.cc" + page, "/");
+	} else {
+	  window.document.title = "WikiDict.cc - " + page;	
+	  history.pushState({page: page}, "WikiDict.cc - " + page, page);
+	}
 }
 
 function setOpensearch(from, to) {

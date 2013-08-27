@@ -3,10 +3,14 @@ ui:
   - ladeanimation (während ajax request)
   - remove temp demo "placeholder", real vert align
   - do autocomplete in table (lighter text color to indicate unfinished result) (IDEAR)
+  - table row control elements like: http://wrapbootstrap.com/preview/WB0B30DGR
+    - add to vocabulary, voice output (computer or wiktionary entries)
 
 core:
   - ajax page load
   	- remember search query in get while switching pages: index?from=... -> downloads -> index
+	- nginx rewrite rules: get directly to wikidict.cc/downloads
+	- auf seiten downloads und about: Im Fenster Titel About und Downloads anstatt nur lowercase
   - rewrite #home/#about/#tools/#imprent in url, use modrewrite for index.php?p=about/...
   - l18n (internationalisation, localisation)
   - funktionalität der seite ohne js

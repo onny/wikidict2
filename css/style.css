@@ -36,6 +36,7 @@ header{
   float: left;
   padding: 0 30px;
   min-width: 100%;
+  margin-bottom: 25px;
 }
 header ul{
   float: right;
@@ -69,7 +70,6 @@ header h1{
   max-width:900px;
   margin:0px auto;
   text-align:left;
-  padding: 20px 10px;
 } 
 #subpage #index{
   padding: 5px 0px 5px 10px;

@@ -52,7 +52,7 @@
 </head>
 <body>
 <header>
-  <a href="javascript:article('index');"><h1>WikiDict.cc</h1></a> <!-- FIXME to ajax -->
+  <a href="javascript:article('');"><h1>WikiDict.cc</h1></a> <!-- FIXME to ajax -->
   <ul>
     <li><a href="javascript:article('downloads');">Downloads</a></li>
     <li><a href="javascript:article('about');">About</a></li>
