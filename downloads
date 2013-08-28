@@ -1,28 +1,58 @@
 <div id='index'><p>Index:</p><ul><li><a href=#wiktionary_dumps>Wiktionary dumps</a></li><li><a href=#bilingual_dictionaries>Bilingual dictionaries</a></li></ul></div>
 <a name='wiktionary_dumps'></a>
 <h3>Wiktionary dumps</h3>
-<p class=timestamp>Last update: 2013-08-20</p>
-<table class="downloads">
-<tr><td>abwiktionary-pages-meta-current</td><td>1 MB</td><td><a
-                    href='http://onny.project-insanity.org/wikidict-neu/files/abwiktionary-20130810-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
-                    href='http://onny.project-insanity.org/wikidict-neu/files/abwiktionary-20130810-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
-<tr><td>alswiktionary-pages-meta-current</td><td>1 MB</td><td><a
-                    href='http://onny.project-insanity.org/wikidict-neu/files/alswiktionary-20130811-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
-                    href='http://onny.project-insanity.org/wikidict-neu/files/alswiktionary-20130811-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
-<tr><td>akwiktionary-pages-meta-current</td><td>1 MB</td><td><a
-                    href='http://onny.project-insanity.org/wikidict-neu/files/akwiktionary-20130816-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
-                    href='http://onny.project-insanity.org/wikidict-neu/files/akwiktionary-20130816-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
-<tr><td>aawiktionary-pages-meta-current</td><td>1 MB</td><td><a
-                    href='http://onny.project-insanity.org/wikidict-neu/files/aawiktionary-20130818-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
-                    href='http://onny.project-insanity.org/wikidict-neu/files/aawiktionary-20130818-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
-<tr><td>afwiktionary-pages-meta-current</td><td>1 MB</td><td><a
-                    href='http://onny.project-insanity.org/wikidict-neu/files/afwiktionary-20130815-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
-                    href='http://onny.project-insanity.org/wikidict-neu/files/afwiktionary-20130815-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
-<tr><td>biwiktionary-pages-meta-current</td><td>1 MB</td><td><a
-                    href='http://onny.project-insanity.org/wikidict-neu/files/biwiktionary-20130811-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
-                    href='http://onny.project-insanity.org/wikidict-neu/files/biwiktionary-20130811-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<p class=timestamp>Last update: 2013-08-28</p>
+<table class='downloads'>
+<tr><td>anwiktionary-pages-meta-current</td><td>0.5 MB</td><td><a
+                    href='http://wikidict.cc/files/anwiktionary-20130826-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/anwiktionary-20130826-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<tr><td>avwiktionary-pages-meta-current</td><td>0.01 MB</td><td><a
+                    href='http://wikidict.cc/files/avwiktionary-20130823-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/avwiktionary-20130823-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<tr><td>abwiktionary-pages-meta-current</td><td>0.06 MB</td><td><a
+                    href='http://wikidict.cc/files/abwiktionary-20130820-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/abwiktionary-20130820-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<tr><td>bewiktionary-pages-meta-current</td><td>0.78 MB</td><td><a
+                    href='http://wikidict.cc/files/bewiktionary-20130823-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/bewiktionary-20130823-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<tr><td>aywiktionary-pages-meta-current</td><td>0.14 MB</td><td><a
+                    href='http://wikidict.cc/files/aywiktionary-20130825-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/aywiktionary-20130825-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<tr><td>aswiktionary-pages-meta-current</td><td>0.06 MB</td><td><a
+                    href='http://wikidict.cc/files/aswiktionary-20130824-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/aswiktionary-20130824-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<tr><td>alswiktionary-pages-meta-current</td><td>0.11 MB</td><td><a
+                    href='http://wikidict.cc/files/alswiktionary-20130821-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/alswiktionary-20130821-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<tr><td>arwiktionary-pages-meta-current</td><td>6.92 MB</td><td><a
+                    href='http://wikidict.cc/files/arwiktionary-20130823-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/arwiktionary-20130823-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<tr><td>akwiktionary-pages-meta-current</td><td>0.01 MB</td><td><a
+                    href='http://wikidict.cc/files/akwiktionary-20130826-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/akwiktionary-20130826-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<tr><td>aawiktionary-pages-meta-current</td><td>0.03 MB</td><td><a
+                    href='http://wikidict.cc/files/aawiktionary-20130818-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/aawiktionary-20130818-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<tr><td>azwiktionary-pages-meta-current</td><td>2.13 MB</td><td><a
+                    href='http://wikidict.cc/files/azwiktionary-20130823-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/azwiktionary-20130823-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<tr><td>astwiktionary-pages-meta-current</td><td>2.03 MB</td><td><a
+                    href='http://wikidict.cc/files/astwiktionary-20130817-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/astwiktionary-20130817-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<tr><td>angwiktionary-pages-meta-current</td><td>0.71 MB</td><td><a
+                    href='http://wikidict.cc/files/angwiktionary-20130826-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/angwiktionary-20130826-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<tr><td>biwiktionary-pages-meta-current</td><td>0.05 MB</td><td><a
+                    href='http://wikidict.cc/files/biwiktionary-20130811-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/biwiktionary-20130811-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<tr><td>amwiktionary-pages-meta-current</td><td>0.47 MB</td><td><a
+                    href='http://wikidict.cc/files/amwiktionary-20130821-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/amwiktionary-20130821-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
+<tr><td>afwiktionary-pages-meta-current</td><td>3.31 MB</td><td><a
+                    href='http://wikidict.cc/files/afwiktionary-20130825-pages-meta-current.xml.bz2'>HTTP</a></td><td><a
+                    href='http://wikidict.cc/files/afwiktionary-20130825-pages-meta-current.xml.bz2.torrent'>TORRENT</a></td></tr>
 </table>
 <a name='bilingual_dictionaries'></a><h3>Bilingual dictionaries</h3>
-<p class=timestamp>Last update: 2013-08-20</p>
+<p class=timestamp>Last update: 2013-08-28</p>
 <table class='downloads'>
 </table>

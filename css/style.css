@@ -94,8 +94,16 @@ header h1{
 #subpage table.downloads{
   width: 100%;
 }
-#subpage table.downloads tr td { padding-left: 15px; white-space: nowrap; }
-#subpage tr.downloads td:first-child { width: 100%; padding-left: 0px; }
+#subpage table.downloads tr td { 
+  white-space: nowrap;
+  padding-left: 15px;
+  text-align: right;
+}
+#subpage table.downloads tr td:first-child {
+  width: 100%;
+  padding-left: 0px;
+  text-align: left;
+}
 #subpage h3{
   border-bottom: 1px dotted #bbb;
 }

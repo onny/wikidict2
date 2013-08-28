@@ -11,10 +11,10 @@ import subprocess
 import time, datetime
 
 path = "dumps/"
-webpath = "http://onny.project-insanity.org/wikidict-neu/files/"
+webpath = "http://wikidict.cc/files/"
 mktorrent_bin = "/usr/bin/mktorrent"
 torrenthashlist_file = "whitelist"
-index_file = "downloads"
+index_file = "../downloads"
 announce = "http://tracker.project-insanity.org:6969/announce"
 webseed = ""
 entries = []
@@ -45,7 +45,7 @@ def scandir(path, level):
                     # build the index: itemname, filename, httplink,
                     #   torrentlink
                     regex = re.compile(r"([a-z]+)-\d+(-pages-meta-current).*"); 
-                    entries.append([regex.sub(r"\1\2", item), item, webpath+item, webpath+item+'.torrent'])
+                    entries.append([regex.sub(r"\1\2", item), item, os.stat(path+'/'+item).st_size, webpath+item, webpath+item+'.torrent'])
                     # create torrent file for package if it doesn't already exist
                     if not os.path.isfile(path+"/"+item+".torrent"):
                         with open(os.devnull, 'wb') as devnull:
@@ -75,9 +75,9 @@ def create_index(index_file):
     index.write("<table class='downloads'>\n")
     for entry in entries:
         debugmsg("- Adding entry: "+entry[0])
-        index.write("""<tr><td>"""+entry[0]+"""</td><td>1 MB</td><td><a
-                    href='"""+entry[2]+"""'>HTTP</a></td><td><a
-                    href='"""+entry[3]+"""'>TORRENT</a></td></tr>\n""")
+        index.write("""<tr><td>"""+entry[0]+"""</td><td>"""+str(round(entry[2]/1024/1000,2))+""" MB</td><td><a
+                    href='"""+entry[3]+"""'>HTTP</a></td><td><a
+                    href='"""+entry[4]+"""'>TORRENT</a></td></tr>\n""")
     index.write("</table>\n")
 
     index.write("<a name='bilingual_dictionaries'></a>")
