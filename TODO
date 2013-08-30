@@ -5,6 +5,7 @@ ui:
   - do autocomplete in table (lighter text color to indicate unfinished result) (IDEAR)
   - table row control elements like: http://wrapbootstrap.com/preview/WB0B30DGR
     - add to vocabulary, voice output (computer or wiktionary entries)
+  - floating header, fixed position when scrolling down the page
 
 core:
   - ajax page load
@@ -21,6 +22,8 @@ features:
   - login, logout, manage vocabularies (
   - opensearch autocompletion (test)
   - Tippfehler erkennen und Korrektur vorschlagen
+  - magnet links instead of torrent files
+  - one torrent complete pack with all dumps
 
 content:
   - vocabulary:
@@ -34,6 +37,7 @@ search:
     - escape wrong input (security): input field (html5 regex or something) and submit form 
     - suchen in beide richtungen
     - ignore case per default
+    - ergebnisse nach gewichtung sortieren (worthäufigkeiti, frequency lists)
   - wiktionary api:
     - #word: replace spaces with _
       - mutmaßlicher bug: wort 'double sharp' linkt nicht mehr richtig wegen leerzeichen

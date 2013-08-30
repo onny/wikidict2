@@ -74,7 +74,7 @@ def create_index(index_file):
     index.write("<p class=timestamp>Last update: "+datetime.datetime.now().strftime('%Y-%m-%d')+"</p>\n")
     index.write("<table class='downloads'>\n")
     for entry in entries:
-        debugmsg("- Adding entry: "+entry[0])
+        debugmsg("- Adding entry: "+entry[0]) # FIXME: (File)Date for every dump
         index.write("""<tr><td>"""+entry[0]+"""</td><td>"""+str(round(entry[2]/1024/1000,2))+""" MB</td><td><a
                     href='"""+entry[3]+"""'>HTTP</a></td><td><a
                     href='"""+entry[4]+"""'>TORRENT</a></td></tr>\n""")

@@ -268,7 +268,7 @@ function showArticle(page) {
 	} else {
 	  $('#container').hide();
 	  $('#subpage').show();
-	  $('#subpage').load(page);
+	  $('#subpage').load('pages/'+page);
 	}
 }
 
