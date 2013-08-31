@@ -50,6 +50,10 @@ misc:
     - one could append the semantics in square brackets after the word in the translation table
   - other possible rewrite: /[a-z] -> ?p= (letters but without following /, so that files in css/js/images-dirs won't get redirected)
 
+convert:
+  - wikt2dict:
+    - use pycountry instead of hardcoded lists of langcodes
+
 - resources:
   - convert
     - https://github.com/newca12/dictionary-builder
