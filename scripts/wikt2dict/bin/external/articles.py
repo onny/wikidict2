@@ -55,7 +55,7 @@ def print_article(htmlparser, article):
   pass
   try:
     print("%%#PAGE " + article.title)
-    print(str(htmlparser.unescape(article.markup)).encode("utf-8"))
+    print(str(htmlparser.unescape(article.markup)))
     print("\n\n\f")
   except IOError:
     sys.exit(0) # broken stdout => broken pipe

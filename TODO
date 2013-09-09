@@ -52,6 +52,7 @@ misc:
 
 convert:
   - wikt2dict:
+    - strip: parse with lxml.de (python module), only write important pages back to xml
     - use pycountry instead of hardcoded lists of langcodes
 
 - resources:

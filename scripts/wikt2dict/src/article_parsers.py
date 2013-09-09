@@ -3,18 +3,13 @@ from collections import defaultdict
 
 from article import ArticleParser
 
-# tester method
-def uprint(str_):
-    print(str_.encode('utf8'))
-
-
 class SectionAndArticleParser(ArticleParser):
     """ Class for parsing Wiktionaries that have translation tables 
     in foreign articles too and section-level parsing is required """
 
     def __init__(self, wikt, filter_langs=None):
         ArticleParser.__init__(self, wikt, filter_langs)
-        self.init_section_parser()
+        self.init_section_parser(wikt)
         self.build_section_re()
         self.section_langfield = int(self.cfg['section_langfield'])
         self.read_section_langmap()
@@ -24,7 +19,7 @@ class SectionAndArticleParser(ArticleParser):
         if self.cfg['uses_section_langnames'] == '1':
             f = open(self.cfg['section_langmap'])
             for l in f:
-                fields = l.strip().decode('utf8').split('\t')
+                fields = l.strip().split('\t')
                 for langname in fields[1:]:
                     self.section_langmap[langname] = fields[0]
                     self.section_langmap[langname.title()] = fields[0]
@@ -32,12 +27,12 @@ class SectionAndArticleParser(ArticleParser):
         else:
             self.section_langmap = dict([(wc, wc) for wc in self.wikicodes])
 
-    def init_section_parser(self):
+    def init_section_parser(self, wikt):
         type_ = self.cfg['section_parser']
         if type_ == 'default':
-            self.section_parser = DefaultArticleParser(self)
+            self.section_parser = DefaultArticleParser(wikt)
         elif type_ == 'langnames':
-            self.section_parser = ArticleParserWithLangnames(self)
+            self.section_parser = ArticleParserWithLangnames(wikt)
         else:
             raise NotImplementedError(
                 "Parser type " + str(type_) + " not implemented\n")
@@ -47,7 +42,7 @@ class SectionAndArticleParser(ArticleParser):
             self.section_re = re.compile(r'==\s*(.+)\s*==\s*\n(.\n+?)', 
                                          re.UNICODE|re.MULTILINE)
         else:
-            self.section_re = re.compile(r'' + self.cfg['section_re'].decode('utf8') 
+            self.section_re = re.compile(r'' + self.cfg['section_re'] 
                                          + r'([.\n]+)',
                                          re.UNICODE|re.MULTILINE)
    
@@ -103,6 +98,7 @@ class ArticleParserWithLangnames(ArticleParser):
                 for langname in fields[1:]:
                     self.mapping[langname] = fields[0]
                     self.mapping[langname.title()] = fields[0]
+                    self.mapping[langname.lower()] = fields[0]
             f.close()
         else:
             self.mapping = dict([(wc, wc) for wc in self.wikicodes])
@@ -133,7 +129,7 @@ class ArticleParserWithLangnames(ArticleParser):
             if fd:
                 try:
                     return fd.group(1).split('|')[1]
-                except IndexError as e:
+                except IndexError:
                     self.wiktionary.log_handler.error("IndexError in entity " + trans.encode('utf8'))
         #TODO fix [[kanojo]] [kanojo]
         trans = re.sub('\'\'+[^\']*\'+', '', trans)
@@ -204,7 +200,8 @@ class DefaultArticleParser(ArticleParser):
             return []
         if self.skip_translation_re and self.skip_translation_re.search(word):
             return []
-        if wc in self.wikicodes and not wc == self.wc:
-            current_pairs.append([wc, word])
+        #if wc in self.wikicodes and not wc == self.wc: # FIXME: don't know how
+        # to fix this ...
+        current_pairs.append([wc, word])
         return current_pairs
 
